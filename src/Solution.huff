@@ -51,8 +51,8 @@
     0x04 shl                    // [(0xff... < (x >> r)) << 0x04, r, z, x]
     or                          // [r, z, x]
 
-    dup1 chainid shr            // [r >> 0x01, r, z, x]
-    swap1 swap2 swap1           // [r >> 0x01, z, r, x]
+    swap1                       // [z, r, x]
+    dup2 chainid shr            // [r >> 0x01, z, r, x]
     shl swap1                   // [r, z, x]
 
     dup3 shr                    // [r >> x, z, x]
